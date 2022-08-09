@@ -29,10 +29,15 @@ form.addEventListener('submit', function (e) {
 
     const date = new Date(year + "/" + month + "/" + day);
     console.log(date.isValid());
-    if (date.isValid() && ageValidation(date.getTime())) {
-        window.location.href="https://www.google.com/";
+    if (date.isValid()) {
+        if(ageValidation(date.getTime())){
+            window.location.href="https://www.google.com/";
+        }else{
+            alert('Your age is under 15');
+        }
+        
     } else {
-        alert('Your age is under 15');
+        alert('Invalid Date');
     }
 
 
